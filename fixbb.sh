@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Source: http://www.gnuplot.info/scripts/files/fixbb
+
 # This is fixbb version 0.31.  Copyright 2000 by Jeff Spirko.
 # Redistributable under the GNU General Public License.
 # See http://topquark.dhs.org/~spirko/fixbb/

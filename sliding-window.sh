@@ -23,16 +23,15 @@ awk -v winsize=$windowsize -v digits=$digits               \
         printf "Line %d has different number of columns than default (%d instead of %d)\n",NR, NF, columns;                                \
         exit 1;                                             \
     }                                                       \
-    for (i = 2; i <= NF; i++)                               \
+    for (i = 1; i <= NF; i++)                               \
         sum[i] += $(i) - t[i,winsize];                      \
-    for (i = 2; i <= NF; i++)                               \
+    for (i = 1; i <= NF; i++)                               \
         for (w = winsize; w >= 2; w--)                      \
             t[i,w] = t[i,w-1];                              \
-    for (i = 2; i <= NF; i++)                               \
+    for (i = 1; i <= NF; i++)                               \
         t[i,1] = $(i);                                      \
     if (NR >= winsize) {                                    \
-    	printf "%s ", $1;                                   \
-        for (i = 2; i <= NF; i++)                           \
+        for (i = 1; i <= NF; i++)                           \
             printf "%.*f ", digits, sum[i]/winsize;         \
         print "";                                           \
     }                                                       \
