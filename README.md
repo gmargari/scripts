@@ -30,9 +30,8 @@ median   : 883
 90.0perc : 2583
 99.0perc : 2684
 99.9perc : 2684
-
 ```
----
+
 
 fixbb.sh
 --------
@@ -44,7 +43,6 @@ Syntax:
 $ fixbb.sh <eps file>
 ```
 
----
 
 flush-page-cache.sh
 -------------------
@@ -64,10 +62,7 @@ Mem:          2950       2732        218         25        252       1147
 sudo sync ...
 echo 3 > /proc/sys/vm/drop_caches ...
 Mem:          2950       1359       1591         25          1        153
-
 ```
-
----
 
 
 pdf2gray.sh
@@ -80,7 +75,6 @@ Syntax:
 $ pdf2gray.sh <input pdf> <output pdf>
 ```
 
----
 
 percentiles.sh
 --------------
@@ -99,7 +93,6 @@ $ cat file.log | awk '{print $2}' | percentiles.sh 0.9 3
 2583.057
 ```
 
----
 
 randint.sh
 ----------
@@ -111,7 +104,6 @@ Syntax:
 $ randint.sh <min int> <max int>
 ```
 
----
 
 remove-comments.sed
 -------------------
@@ -124,7 +116,6 @@ Syntax:
 $ remove-comments.sed < a.c > a-nocomments.c
 ```
 
----
 
 sliding-window.sh
 -----------------
@@ -149,6 +140,7 @@ $ cat f
 9
 6
 4
+
 $ cat f | sliding-window.sh 4 3
 4.250 
 5.500 
@@ -156,10 +148,8 @@ $ cat f | sliding-window.sh 4 3
 7.500 
 7.250 
 6.750 
-
 ```
 
----
 
 
 subs-adjust.awk
