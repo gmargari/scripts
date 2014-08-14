@@ -33,6 +33,7 @@ median   : 883
 ```
 
 
+
 fixbb.sh
 --------
 
@@ -42,6 +43,7 @@ Syntax:
 ```shell
 $ fixbb.sh <eps file>
 ```
+
 
 
 flush-page-cache.sh
@@ -63,6 +65,32 @@ sudo sync ...
 echo 3 > /proc/sys/vm/drop_caches ...
 Mem:          2950       1359       1591         25          1        153
 ```
+
+
+
+git-gc.sh
+---------
+
+A more efficient way to garbage collect a git repository ([according to Linus](http://gcc.gnu.org/ml/gcc/2007-12/msg00165.html0)).
+
+Syntax (inside a git repository):
+```shell
+$ git-gc.sh
+```
+
+
+
+git-kompare-[staged|unstaged].sh
+---------
+
+See the code changes that are staged for commit, or not staged yet, using [Kompare](http://www.caffeinated.me.uk/kompare/).
+
+Syntax (inside a git repository):
+```shell
+$ git-kompare-staged.sh
+$ git-kompare-unstaged.sh
+```
+
 
 
 pdf2gray.sh
@@ -110,11 +138,11 @@ remove-comments.sed
 
 Remove comments from C / C++ files.
 
-
 Syntax:
 ```shell
 $ remove-comments.sed < a.c > a-nocomments.c
 ```
+
 
 
 sliding-window.sh
@@ -157,8 +185,29 @@ subs-adjust.awk
 
 Adjust the timing of subtitles, shifting them by a specific amount of time.
 
-
 Example:
 ```shell
 $ subs-adjust.awk -v s=+10 -v ms=-350 foo.srt > foo-synced.srt
+```
+
+
+
+tmpfs-[mount|umount].sh
+-----------------------
+
+Mount (or umount) part of the physical memory as a normal disk partition. Will create the mount directory if it does not exist.
+
+Syntax:
+```shell
+$ tmpfs-mount.sh <size_in_mb> <directory>
+$ tmpfs-umount.sh <directory>
+```
+
+Example: mount 100MB of memory as disk a partition in /tmp/ram_dir/.
+```shell
+$ tmpfs-mount.sh 100 /tmp/ram_dir
+
+    < ... use /tmp/ram_dir ... >
+
+$ tmpfs-umount.sh /tmp/ram_dir
 ```
